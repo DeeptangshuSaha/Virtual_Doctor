@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {% load static %}
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width,initial-scale=1" name="viewport">
+  <meta content="description" name="description">
+  <meta name="google" content="notranslate" />
+  <meta content="Mashup templates have been developped by Orson.io team" name="author">
+
+  <!-- Disable tap highlight on IE -->
+  <meta name="msapplication-tap-highlight" content="no">
+  
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="{% static 'first/assets/apple-icon-180x180.png' %}">
+  <link href="{% static 'first/assets/favicon.ico' %}" rel="icon">
+
+  <link href="{% static 'first/main.550dcf66.css' %} " type="text/css" rel="stylesheet">
+
+
+  <title>Check-Up</title>
+
+<link href="{% static 'first/main.550dcf66.css' %} " rel="stylesheet"></head>
+
+<body> <!-- Add your content of header -->
+<header>
+  <nav class="navbar navbar-default active">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="{% url 'Home' %} " title="">
+          <img src="{% static 'first/assets/images/mashup-icon.svg' %} " class="navbar-logo-img" alt="">
+          NAVBAR
+        </a>
+      </div>
+
+      <div class="collapse navbar-collapse" id="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="{% url 'Home' %} " title="">Home</a></li>
+          <li><a href="{% url 'Checkup' %}" title="">Check-Up</a></li>
+
+        </ul>
+      </div> 
+    </div>
+  </nav>
+</header>
+
+<div class="section-container">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-md-8 col-md-offset-2">
+          <h1 class="text-center">Check-Up</h1>
+          <p>Here in the below section we are going to take the input of symptoms and diagnose it. </p>
+          <div class="section-container-spacer">
+            <img src="{% static 'first/assets/images/img-06.jpg' %} " alt="" class="img-responsive reveal-content" data-action="zoom">
+          </div>
+       </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-container">
+    <div class="container">
+      <div class="row section-container-spacer">
+        <div class="col-xs-12 col-md-8 col-md-offset-2">
+          <h2 class="text-center">More</h2>
+          <div class="section-container-spacer">
+            <!--form action="{% url 'virtualdoc'  %}" method="POST">{% csrf_token %}
+              {% for symptom in arr%}
+              <input type="checkbox" name="checks[]" value="{{symptom}}"/> {{symptom}}<br>
+              {% endfor %}-->
+
+
+            <form action="{% url 'virtualdoc'  %}" method=”GET”>  
+              <input type="checkbox" id="sym1" name="checks[]1" value="drying_and_tingling_lips">
+              <label for="sym1"> drying_and_tingling_lips</label><br>
+              <input type="checkbox" id="sym2" name="checks[]" value="blackheads">
+              <label for="sym2"> blackheads</label><br>
+              <input type="checkbox" id="sym3" name="checks[]" value="muscle_pain">
+              <label for="sym3"> muscle_pain</label><br>
+              <input type="checkbox" id="sym4" name="checks[]" value="stomach_pain">
+              <label for="sym3"> stomach_pain</label><br>
+              <input type="checkbox" id="sym5" name="checks[]" value="constipation">
+              <label for="sym5"> constipation</label><br>
+              <input type="checkbox" id="sym6" name="checks[]" value="weakness_in_limbs">
+              <label for="sym6"> weakness_in_limbs</label><br>
+              <input type="checkbox" id="sym7" name="checks[]" value="yellowing_of_eyes">
+              <label for="sym7"> yellowing_of_eyes</label><br>
+              <input type="checkbox" id="sym8" name="checks[]" value="runny_nose">
+              <label for="sym8"> runny_nose</label><br>
+              <input type="checkbox" id="sym9" name="checks[]" value="loss_of_balance">
+              <label for="sym9">loss_of_balance</label><br>
+              <input type="checkbox" id="sym10" name="checks[]" value="stomach_bleeding">
+              <label for="sym10">stomach_bleeding</label><br>
+              <input type="checkbox" id="sym11" name="checks[]" value="obesity">
+              <label for="sym11">obesity</label><br>
+              <input type="checkbox" id="sym12" name="checks[]" value="skin_peeling">
+              <label for="sym12"> skin_peeling</label><br>
+              <input type="checkbox" id="sym13" name="checks[]" value="malaise">
+              <label for="sym13"> malaise</label><br>
+              <input type="checkbox" id="sym14" name="checks[]" value="bloody_stool">
+              <label for="sym14"> bloody_stool</label><br>
+              <input type="checkbox" id="sym15" name="checks[]" value="breathlessness">
+              <label for="sym15">breathlessness</label><br>
+              <input type="checkbox" id="sym16" name="checks[]" value="acidity">
+              <label for="sym16">acidity</label><br>
+              <input type="checkbox" id="sym17" name="checks[]" value="weight_loss">
+              <label for="sym17">weight_loss</label><br>
+              <input type="checkbox" id="sym18" name="checks[]" value="skin_rash">
+              <label for="sym18"> skin_rash</label><br>
+              <input type="checkbox" id="sym19" name="checks[]" value="dischromic _patches">
+              <label for="sym19">dischromic _patches</label><br>
+              <input type="checkbox" id="sym20" name="checks[]" value="puffy_face_and_eyes">
+              <label for="sym20">puffy_face_and_eyes</label><br>
+              <input type="checkbox" id="sym21" name="checks[]" value="sweating">
+              <label for="sym21">sweating</label><br>
+              <input type="checkbox" id="sym22" name="checks[]" value="spotting_ urination">
+              <label for="sym22">spotting_ urination</label><br>
+              <input type="checkbox" id="sym23" name="checks[]" value="ulcers_on_tongue">
+              <label for="sym23">ulcers_on_tongue</label><br>
+              <input type="checkbox" id="sym24" name="checks[]" value="lethargy">
+              <label for="sym24">lethargy</label><br>
+              <input type="checkbox" id="sym25" name="checks[]" value="weight_gain">
+              <label for="sym25">weight_gain</label><br>            
+              <input type="checkbox" id="sym26" name="checks[]" value="dizziness">
+              <label for="sym26">dizziness</label><br>
+              <input type="checkbox" id="sym27" name="checks[]" value="distention_of_stomach">
+              <label for="sym27"> distention_of_stomach</label><br>
+              <input type="checkbox" id="sym28" name="checks[]" value="swelling_of_stomach">
+              <label for="sym29">swelling_of_stomach</label><br>
+              <input type="checkbox" id="sym29" name="checks[]" value="nausea">
+              <label for="sym29">nausea</label><br>
+              <input type="checkbox" id="sym30" name="checks[]" value="internal_itching">
+              <label for="sym30">internal_itching</label><br>
+              <input type="checkbox" id="sym31" name="checks[]" value="redness_of_eyes">
+              <label for="sym31">redness_of_eyes</label><br>
+              <input type="checkbox" id="sym32" name="checks[]" value="mild_fever">
+              <label for="sym32">mild_fever</label><br>
+              <input type="checkbox" id="sym33" name="checks[]" value="prominent_veins_on_calf">
+              <label for="sym33">prominent_veins_on_calf</label><br>
+              <input type="checkbox" id="sym34" name="checks[]" value="pain_during_bowel_movements">
+              <label for="sym34">pain_during_bowel_movements</label><br>
+              <input type="checkbox" id="sym35" name="checks[]" value="silver_like_dusting">
+              <label for="sym35">silver_like_dusting</label><br>
+              <input type="checkbox" id="sym36" name="checks[]" value="patches_in_throat">
+              <label for="sym36">patches_in_throat</label><br>
+              <input type="checkbox" id="sym37" name="checks[]" value="muscle_wasting">
+              <label for="sym37">muscle_wasting</label><br>
+              <input type="checkbox" id="sym38" name="checks[]" value="indigestion">
+              <label for="sym38">indigestion</label><br>
+              <input type="checkbox" id="sym39" name="checks[]" value="pain_behind_the_eyes">
+              <label for="sym39">pain_behind_the_eyes</label><br>
+              <input type="checkbox" id="sym40" name="checks[]" value="yellowish_skin">
+              <label for="sym40">yellowish_skin</label><br>
+              <input type="checkbox" id="sym41" name="checks[]" value="altered_sensorium">
+              <label for="sym41">altered_sensorium</label><br>
+              <input type="checkbox" id="sym42" name="checks[]" value="continuous_sneezing">
+              <label for="sym42">continuous_sneezing</label><br>
+              <input type="checkbox" id="sym43" name="checks[]" value="painful_walking">
+              <label for="sym43">painful_walking</label><br>
+              <input type="checkbox" id="sym44" name="checks[]" value="extra_marital_contacts">
+              <label for="sym44">extra_marital_contacts</label><br>
+              <input type="checkbox" id="sym45" name="checks[]" value="blood_in_sputum">
+              <label for="sym45">blood_in_sputum</label><br>
+              <input type="checkbox" id="sym46" name="checks[]" value="pus_filled_pimples">
+              <label for="sym46">pus_filled_pimples</label><br>
+              <input type="checkbox" id="sym47" name="checks[]" value="sinus_pressure">
+              <label for="sym47">sinus_pressure</label><br>
+              <input type="checkbox" id="sym48" name="checks[]" value="congestion">
+              <label for="sym48">congestion</label><br>
+              <input type="checkbox" id="sym49" name="checks[]" value="swelling_joints">
+              <label for="sym49">swelling_joints</label><br>
+              <input type="checkbox" id="sym50" name="checks[]" value="back_pain">
+              <label for="sym50">back_pain</label><br>
+              <input type="checkbox" id="sym51" name="checks[]" value="history_of_alcohol_consumption">
+              <label for="sym51">history_of_alcohol_consumption</label><br>
+              <input type="checkbox" id="sym52" name="checks[]" value="stiff_neck">
+              <label for="sym52">stiff_neck</label><br>
+              <input type="checkbox" id="sym53" name="checks[]" value="slurred_speech">
+              <label for="sym53">slurred_speech</label><br>
+              <input type="checkbox" id="sym54" name="checks[]" value="burning_micturition">
+              <label for="sym54">burning_micturition</label><br>
+              <input type="checkbox" id="sym55" name="checks[]" value="anxiety">
+              <label for="sym55">anxiety</label><br>
+              <input type="checkbox" id="sym56" name="checks[]" value="foul_smell_of urine">
+              <label for="sym56">foul_smell_of urine</label><br>
+              <input type="checkbox" id="sym57" name="checks[]" value="vomiting">
+              <label for="sym57">vomiting</label><br>
+              <input type="checkbox" id="sym58" name="checks[]" value="acute_liver_failure">
+              <label for="sym58">acute_liver_failure</label><br>
+              <input type="checkbox" id="sym59" name="checks[]" value="loss_of_smell">
+              <label for="sym59">loss_of_smell</label><br>
+              <input type="checkbox" id="sym60" name="checks[]" value="dehydration">
+              <label for="sym60">dehydration</label><br>
+              <input type="checkbox" id="sym61" name="checks[]" value="loss_of_appetite">
+              <label for="sym61">loss_of_appetite</label><br>
+              <input type="checkbox" id="sym62" name="checks[]" value="cramps">
+              <label for="sym62">cramps</label><br>
+              <input type="checkbox" id="sym63" name="checks[]" value="excessive_hunger">
+              <label for="sym63">excessive_hunger</label><br>
+              <input type="checkbox" id="sym64" name="checks[]" value="muscle_weakness">
+              <label for="sym64">muscle_weakness</label><br>
+              <input type="checkbox" id="sym65" name="checks[]" value="watering_from_eyes">
+              <label for="sym65">watering_from_eyes</label><br>
+              <input type="checkbox" id="sym66" name="checks[]" value="chills">
+              <label for="sym66">chills</label><br>
+              <input type="checkbox" id="sym67" name="checks[]" value="abnormal_menstruation">
+              <label for="sym67">abnormal_menstruation</label><br>
+              <input type="checkbox" id="sym68" name="checks[]" value="cold_hands_and_feets">
+              <label for="sym68">cold_hands_and_feets</label><br>
+              <input type="checkbox" id="sym69" name="checks[]" value="spinning_movements">
+              <label for="sym69">spinning_movements</label><br>
+              <input type="checkbox" id="sym70" name="checks[]" value="bruising">
+              <label for="sym70">bruising</label><br>              
+              <input type="checkbox" id="sym71" name="checks[]" value="red_sore_around_nose">
+              <label for="sym71">red_sore_around_nose</label><br>
+              <input type="checkbox" id="sym72" name="checks[]" value="yellow_crust_ooze">
+              <label for="sym72">yellow_crust_ooze</label><br>
+              <input type="checkbox" id="sym73" name="checks[]" value="receiving_blood_transfusion">
+              <label for="sym73">receiving_blood_transfusion</label><br>
+              <input type="checkbox" id="sym74" name="checks[]" value="bladder_discomfort">
+              <label for="sym74">bladder_discomfort</label><br>
+              <input type="checkbox" id="sym75" name="checks[]" value="phlegm">
+              <label for="sym75">phlegm</label><br>
+              <input type="checkbox" id="sym76" name="checks[]" value="diarrhoea">
+              <label for="sym76">diarrhoea</label><br>
+              <input type="checkbox" id="sym77" name="checks[]" value="belly_pain">
+              <label for="sym77">belly_pain</label><br>
+              <input type="checkbox" id="sym78" name="checks[]" value="joint_pain">
+              <label for="sym78">joint_pain</label><br>
+              <input type="checkbox" id="sym79" name="checks[]" value="chest_pain">
+              <label for="sym79">chest_pain</label><br>
+              <input type="checkbox" id="sym80" name="checks[]" value="depression">
+              <label for="sym80">depression</label><br> 
+              
+              <input type="submit" value="Submit">
+
+            </form>
+            <p></p>
+            <p></p>
+          </div>  
+        </div>  
+      </div>
+    </div>
+  </div>
+
+  <div class="section-container">
+    <div class="container text-center">
+      <div class="row section-container-spacer">
+        <div class="col-xs-12 col-md-12">
+          
+          <h3>Do you like it ?</h3>
+          <p>
+            <a href="https://facebook.com/" target= "_blank" class="social-round-icon fa-icon" title="">
+              <i class="fa fa-facebook" aria-hidden="true"></i>
+            </a>
+            <a href="https://twitter.com/" target= "_blank" class="social-round-icon fa-icon" title="">
+              <i class="fa fa-twitter" aria-hidden="true"></i>
+            </a>
+            <a href="https://www.linkedin.com/" target= "_blank" class="social-round-icon fa-icon" title="">
+              <i class="fa fa-linkedin" aria-hidden="true"></i>
+            </a>
+          </p>
+        </div>  
+      </div>
+    
+    </div>
+  </div>
+
+<footer class="footer-container white-text-container">
+  <div class="container">
+    <div class="row">
+
+     
+      <div class="col-xs-12">
+        <h3>Virtual Doctor</h3>
+
+        <div class="row">
+          <div class="col-xs-12 col-sm-7">
+            <p><small>Website created with <a href="http://www.mashup-template.com/" target= "_blank" title="Create website with free html template">Mashup Template</a>/<a href="https://www.unsplash.com/" target= "_blank" title="Beautiful Free Images">Unsplash</a></small>
+            </p>
+          </div>
+          <div class="col-xs-12 col-sm-5">
+            <p class="text-right">
+              <a href="https://facebook.com/" target= "_blank" class="social-round-icon white-round-icon fa-icon" title="">
+                <i class="fa fa-facebook" aria-hidden="true"></i>
+              </a>
+              <a href="https://twitter.com/" target= "_blank" class="social-round-icon white-round-icon fa-icon" title="">
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+              </a>
+              <a href="https://www.linkedin.com/" target= "_blank" class="social-round-icon white-round-icon fa-icon" title="">
+                <i class="fa fa-linkedin" aria-hidden="true"></i>
+              </a>
+            </p>
+          </div>
+        </div>
+        
+        
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function (event) {
+    navActivePage();
+    scrollRevelation('.reveal');
+  });
+</script>
+
+<!-- Google Analytics: change UA-XXXXX-X to be your site's ID 
+
+<script>
+  (function (i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+      (i[r].q = i[r].q || []).push(arguments)
+    }, i[r].l = 1 * new Date(); a = s.createElement(o),
+      m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+  })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+  ga('create', 'UA-XXXXX-X', 'auto');
+  ga('send', 'pageview');
+</script>
+
+--> <script type="text/javascript" src="{% static 'first/main.0cf8b554.js' %} "></script></body>
+
+</html>
